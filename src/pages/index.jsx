@@ -22,7 +22,7 @@ export default function MainPages() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<LayoutCore />}>
+        <Route path="/Admin-THH" element={<LayoutCore />}>
           <Route element={<RequiredRoute />}>
             <Route path="/" element={<Main />} />
 
