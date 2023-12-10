@@ -6,6 +6,7 @@ import Loading from '../Loading/Loading'
 export default function RequiredRoute() {
     const [cookies] = useCookies(["logged_in"]);
     const location = useLocation();
+    console.log("🚀 ~ file: RequiredRoute.jsx:9 ~ RequiredRoute ~ location:", location)
 
 
     const { isLoading, isFetching, data } = userApi.endpoints.getMe.useQuery(null, {
@@ -29,6 +30,6 @@ export default function RequiredRoute() {
     return (cookies.logged_in || !isFetching && data) ? (
         <Outlet />
     ) : (
-        <Navigate to="/Admin-THH/login" state={{ from: location }} replace />
+        <Navigate to="/login" state={{ from: location }} replace />
     )
 }
