@@ -24,7 +24,7 @@ export default function Login() {
   useEffect(() => {
     if (loginResults.isSuccess) {
       if (loginResults.data?.user?.role === 1) {
-        navigate("");
+        navigate("/");
         message.success("Đăng nhập thành công !");
       } else {
         message.error("Xin lỗi bạn không phải Admin !");
@@ -47,9 +47,7 @@ export default function Login() {
 
   useEffect(() => {
     if(token) {
-        setTimeout(() => {
-            navigate('/');
-        }, 800);
+        navigate('/');
     }
   }, [token])
   return (

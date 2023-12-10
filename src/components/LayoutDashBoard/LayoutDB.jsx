@@ -56,14 +56,12 @@ export default function LayoutDB(props) {
     }
   }, [isLoading]);
 
-  const setCurSubMeuProfile = (e) => {
+  const setCurSubMeuProfile = async (e) => {
     setCurrentProfileSubMeu(e.key);
     if (e.key === "/profile") {
       navigate(e.key);
     } else if (e.key === "/logout") {
-      setTimeout(async () => {
         await logout().unwrap();
-      }, 800);
     }
   };
 

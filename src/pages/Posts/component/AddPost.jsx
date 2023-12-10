@@ -40,7 +40,7 @@ export default function AddProduct() {
     }
 
     if (postId && isError) {
-      navigate("/product");
+      navigate("/post");
     }
   }, [data, form, isError, navigate, postId]);
 
