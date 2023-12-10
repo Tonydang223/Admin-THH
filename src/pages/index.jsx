@@ -14,38 +14,41 @@ import DetailCourse from "./Course/\bDetailCourse";
 import AddCourse from "./Course/components/ActionCourse/AddCourse";
 import MainCourseLayout from "./Course/MainCourseLayout";
 import MainProductLayout from "./Product/MainProductLayout";
-import MainLayoutPost from "./Posts/MainLayoutPost"
-import AddPost from "./Posts/component/AddPost"
+import MainLayoutPost from "./Posts/MainLayoutPost";
+import AddPost from "./Posts/component/AddPost";
+import LayoutCore from "./LayoutCore";
 
 export default function MainPages() {
   return (
     <>
       <Routes>
-        <Route element={<RequiredRoute />}>
-          <Route path="/admin" element={<Main />} />
+        <Route path="/" element={<LayoutCore />}>
+          <Route element={<RequiredRoute />}>
+            <Route path="/" element={<Main />} />
 
-          <Route path="admin/course" element={<MainCourseLayout />}>
-            <Route index element={<Courses />} />
-            <Route path="add" element={<AddCourse />} />
-            <Route path="detail/:id" element={<DetailCourse />} />
+            <Route path="course" element={<MainCourseLayout />}>
+              <Route index element={<Courses />} />
+              <Route path="add" element={<AddCourse />} />
+              <Route path="detail/:id" element={<DetailCourse />} />
+            </Route>
+
+            <Route path="product" element={<MainProductLayout />}>
+              <Route index element={<MainProduct />} />
+              <Route path="add" element={<AddProduct />} />
+              <Route path="add/:productId" element={<AddProduct />} />
+            </Route>
+
+            <Route path="post" element={<MainLayoutPost />}>
+              <Route index element={<MainPost />} />
+              <Route path="add" element={<AddPost />} />
+              <Route path="add/:postId" element={<AddPost />} />
+            </Route>
+            <Route path="user" element={<MainUser />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
-
-          <Route path="admin/product" element={<MainProductLayout />}>
-            <Route index element={<MainProduct />} />
-            <Route path="add" element={<AddProduct />} />
-            <Route path="add/:productId" element={<AddProduct />} />
-          </Route>
-
-          <Route path="admin/post" element={<MainLayoutPost />} > 
-             <Route index element={<MainPost />} />
-             <Route path="add" element={<AddPost />} />
-             <Route path="add/:postId" element={<AddPost />} />
-           </Route>
-          <Route path="admin/user" element={<MainUser />} />
-          <Route path="admin/profile" element={<Profile />} />
+          <Route path="login" element={<Login />} />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
-        <Route path="admin/login" element={<Login />} />
-        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <ModalFirm />
     </>

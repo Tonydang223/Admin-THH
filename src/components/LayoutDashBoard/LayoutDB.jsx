@@ -42,7 +42,7 @@ export default function LayoutDB(props) {
   const [logout, { isSuccess, isLoading }] = useLogoutMutation();
 
   useEffect(() => {
-    setCurrent(`${location.pathname.split('/').flatMap(i => [i,'/']).slice(1, 5).join('')}`);
+    setCurrent(`/${location.pathname.split('/')[1]}`);
   }, [location.pathname]);
 
   const setCurrentMenu = (e) => {
@@ -51,16 +51,16 @@ export default function LayoutDB(props) {
 
   useEffect(() => {
     if (isSuccess) {
-      navigate("/admin/login");
+      navigate("/login");
       window.location.reload(false);
     }
   }, [isLoading]);
 
   const setCurSubMeuProfile = (e) => {
     setCurrentProfileSubMeu(e.key);
-    if (e.key === "/admin/profile") {
+    if (e.key === "/profile") {
       navigate(e.key);
-    } else if (e.key === "/admin/logout") {
+    } else if (e.key === "/logout") {
       setTimeout(async () => {
         await logout().unwrap();
       }, 800);
@@ -126,27 +126,27 @@ export default function LayoutDB(props) {
             {
               label: "Home",
               icon: <IoHome />,
-              key: "/admin",
+              key: "/",
             },
             {
               label: "User",
               icon: <FaUser />,
-              key: "/admin/user",
+              key: "/user",
             },
             {
               label: "Product",
               icon: <FaStoreAlt />,
-              key: "/admin/product",
+              key: "/product",
             },
             {
               label: "Post",
               icon: <MdPostAdd />,
-              key: "/admin/post",
+              key: "/post",
             },
             {
               label: "Course",
               icon: <IoBookSharp />,
-              key: "/admin/course",
+              key: "/course",
             },
           ]}
         />
@@ -176,12 +176,12 @@ export default function LayoutDB(props) {
               items: [
                 {
                   label: "Trang Cá Nhân",
-                  key: "/admin/profile",
+                  key: "/profile",
                   icon: <CgProfile />,
                 },
                 {
                   label: "Đăng xuất",
-                  key: "/admin/logout",
+                  key: "/logout",
                   icon: <IoExitOutline />,
                 },
               ],

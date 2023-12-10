@@ -10,6 +10,6 @@ export default defineConfig({
     ckeditor5({ theme: require.resolve("@ckeditor/ckeditor5-theme-lark") }),
   ],
   envPrefix: "_",
-  base: "/admin",
+  base: "/",
   port: 4000,
 });

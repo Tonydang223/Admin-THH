@@ -22,8 +22,7 @@ export const ApisAuth = createApi({
       query: () => {
         return {
           url: "auth/logout",
-          credentials: "include",
-          method: "GET",
+          method: "POST",
         };
       },
     }),

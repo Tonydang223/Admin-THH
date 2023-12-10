@@ -12,6 +12,8 @@ export default function RequiredRoute() {
         skip: false,
         refetchOnMountOrArgChange: true,
     });
+
+
     
     const loading = isLoading || isFetching;
 
@@ -27,6 +29,6 @@ export default function RequiredRoute() {
     return (cookies.logged_in || !isFetching && data) ? (
         <Outlet />
     ) : (
-        <Navigate to="/admin/login" state={{ from: location }} replace />
+        <Navigate to="/login" state={{ from: location }} replace />
     )
 }
