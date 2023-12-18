@@ -237,8 +237,9 @@ export default function AddProduct() {
           <Select
             allowClear
             options={[
-              { value: "da lieu", label: "Da Liễu" },
-              { value: "cham soc be", label: "Chăm sóc bé" },
+              { value: "Mỡ máu", label: "Mỡ máu" },
+              { value: "Dạ dày", label: "Dạ dày" },
+              { value: "Xương khớp", label: "Xương khớp" },
             ]}
           />
         </Form.Item>
