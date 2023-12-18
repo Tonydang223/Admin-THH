@@ -320,6 +320,9 @@ export default function AddProduct() {
                   { value: "l", label: "l" },
                   { value: "gói", label: "gói" },
                   { value: "hộp", label: "hộp" },
+                  { value: "chiếc", label: "chiếc" },
+                  { value: "lọ", label: "lọ" },
+                  { value: "chai", label: "chai" },
                 ]}
               />
             }
