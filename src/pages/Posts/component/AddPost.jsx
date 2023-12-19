@@ -4,6 +4,7 @@ import {
   Input,
   Upload,
   message,
+  Select
 } from "antd";
 const FormItem = Form.Item;
 import axios from "axios";
@@ -226,10 +227,32 @@ export default function AddProduct() {
         >
           <Input placeholder="Tiêu đề" />
         </FormItem>
+        <FormItem
+          name={"short_des"}
+          label="Nội dung mô tả ngắn"
+          rules={[{ required: true, message: "Please enter the short description !" }]}
+        >
+          <Input placeholder="Nội dung mô tả ngắn" style={{height: '160px'}}/>
+        </FormItem>
+        <Form.Item
+          name="categories"
+          rules={[{ required: true, message: "Please select categories!" }]}
+          label="Loại bài viết"
+        >
+          <Select
+            allowClear
+            options={[
+              { value: "health", label: "Bàn về sức khoẻ" },
+              { value: "skin", label: "Chăm sóc da" },
+              { value: "trick", label: "Mẹo hay chữa bệnh" },
+              { value: "remedy", label: "Phương thuốc dân gian" },
+            ]}
+          />
+        </Form.Item>
 
         <FormItem
           name={"desc"}
-          label="Mô tả"
+          label="Mô tả chi tiết"
           rules={[{ required: true, message: "Please enter the desc !" }]}
         >
           <CkEdit

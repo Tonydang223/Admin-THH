@@ -12,7 +12,6 @@ import axios from "axios";
 import { PlusOutlined } from "@ant-design/icons";
 
 import { getBase64 } from "../../../utils/readFile";
-import LayoutDB from "../../../components/LayoutDashBoard/LayoutDB";
 import { useEffect, useState } from "react";
 import ModalImage from "../../../components/Modals/ModalImage";
 import CkEdit from "../../../components/CkEditor5/CkEdit";
