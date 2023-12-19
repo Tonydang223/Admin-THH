@@ -1,11 +1,4 @@
-import {
-  Button,
-  Form,
-  Input,
-  Upload,
-  message,
-  Select
-} from "antd";
+import { Button, Form, Input, Upload, message, Select } from "antd";
 const FormItem = Form.Item;
 import axios from "axios";
 import { PlusOutlined } from "@ant-design/icons";
@@ -142,7 +135,7 @@ export default function AddProduct() {
       }
       if (createPostRes.isError) {
         if (Array.isArray(createPostRes.error.data.error)) {
-            createPostRes.error.data.error.forEach((el) =>
+          createPostRes.error.data.error.forEach((el) =>
             message.error(el.message)
           );
         } else {
@@ -155,7 +148,7 @@ export default function AddProduct() {
       }
       if (editPostRes.isError) {
         if (Array.isArray(editPostRes.error.data.error)) {
-            editPostRes.error.data.error.forEach((el) =>
+          editPostRes.error.data.error.forEach((el) =>
             message.error(el.message)
           );
         } else {
@@ -230,9 +223,16 @@ export default function AddProduct() {
         <FormItem
           name={"short_des"}
           label="Nội dung mô tả ngắn"
-          rules={[{ required: true, message: "Please enter the short description !" }]}
+          rules={[
+            { required: true, message: "Please enter the short description !" },
+          ]}
         >
-          <Input placeholder="Nội dung mô tả ngắn" style={{height: '160px'}}/>
+          <Input.TextArea
+            showCount
+            maxLength={100}
+            placeholder="Nội dung mô tả ngắn"
+            style={{ height: 120, resize: "none" }}
+          />
         </FormItem>
         <Form.Item
           name="categories"
@@ -255,10 +255,7 @@ export default function AddProduct() {
           label="Mô tả chi tiết"
           rules={[{ required: true, message: "Please enter the desc !" }]}
         >
-          <CkEdit
-            onChange={onChangeEditor}
-            data={data ? data.desc : ''}
-          />
+          <CkEdit onChange={onChangeEditor} data={data ? data.desc : ""} />
         </FormItem>
         <FormItem>
           <Button
