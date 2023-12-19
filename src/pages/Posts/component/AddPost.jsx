@@ -230,7 +230,8 @@ export default function AddProduct() {
           <Input.TextArea
             showCount
             placeholder="Nội dung mô tả ngắn"
-            style={{ height: 120, resize: "none" }}
+            maxLength={2500}
+            style={{ height: 120 }}
           />
         </FormItem>
         <Form.Item
