@@ -158,7 +158,6 @@ export default function Lectures() {
                       extra={
                         <CloseOutlined
                           onClick={() => {
-                            console.log("aaa");
                             if (form.getFieldValue("items")[index]?._id) {
                               setDataDel([
                                 ...dataDel,
@@ -180,6 +179,12 @@ export default function Lectures() {
                         {...field}
                         label="Title"
                         name={[field.name, "title"]}
+                        rules={[
+                          {
+                            required: true,
+                            message: "Please enter the title !",
+                          },
+                        ]}
                       >
                         <Input placeholder="Tiều đề bào học" />
                       </Form.Item>
