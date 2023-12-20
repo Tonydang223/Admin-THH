@@ -213,6 +213,20 @@ export default function EditCourse() {
             placeholder="Instructor"
           />
         </FormItem>
+        <FormItem
+          name={"short_des"}
+          label="Nội dung mô tả ngắn"
+          rules={[
+            { required: true, message: "Please enter the short description !" },
+          ]}
+        >
+          <Input.TextArea
+            showCount
+            placeholder="Nội dung mô tả ngắn"
+            maxLength={2500}
+            style={{ height: 120 }}
+          />
+        </FormItem>
         <Form.Item
           name="level"
           rules={[{ required: true, message: "Please select categories!" }]}

@@ -111,10 +111,6 @@ export default function AddProduct() {
             status: e.thumbnail[0].status,
           },
         };
-        console.log(
-          "🚀 ~ file: AddPost.jsx:109 ~ handleSubmit ~ editedValues:",
-          editedValues
-        );
         if (!postId) {
           await createPost(editedValues).unwrap();
         } else {
