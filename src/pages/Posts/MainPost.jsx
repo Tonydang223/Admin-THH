@@ -168,7 +168,6 @@ export default function MainPost() {
                   closeGlobal();
                   setTimeout(async () => {
                     if (recycles) {
-                      console.log("xoa that");
                       await deletePost({ ids: dt }).unwrap();
                     } else {
                       await deletePostRestore({ ids: dt }).unwrap();

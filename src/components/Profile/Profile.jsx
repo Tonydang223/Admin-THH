@@ -12,7 +12,6 @@ import { useEditMeMutation } from "./profile.service";
 
 export default function Profile() {
   const { user } = useSelector((state) => state.user);
-  console.log("🚀 ~ file: Profile.jsx:15 ~ Profile ~ user:", user)
   const [form] = Form.useForm();
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewImage, setPreviewImage] = useState("");
@@ -118,10 +117,6 @@ export default function Profile() {
   }, [editMeRes.isLoading]);
 
   const onChangeImgs = async (fileList) => {
-    console.log(
-      "🚀 ~ file: Profile.jsx:126 ~ onChangeImgs ~ fileList:",
-      fileList
-    );
     setNumLen(fileList.fileList.length);
   };
 

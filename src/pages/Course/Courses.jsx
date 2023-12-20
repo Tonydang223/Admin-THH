@@ -179,7 +179,6 @@ export default function Courses() {
                   closeGlobal();
                   setTimeout(async () => {
                     if (recycles) {
-                      console.log("xoa that");
                       await deleteCourse({ ids: dt }).unwrap();
                     } else {
                       await deleteCourseRestore({ ids: dt }).unwrap();
@@ -200,7 +199,6 @@ export default function Courses() {
             type="primary"
             onClick={async () => {
               if (recycles) {
-                console.log("restore");
                 const dt = [course._id];
                 await deleteCourseRestoreBack({ ids: dt }).unwrap();
                 setSelectedRowKeys([]);
